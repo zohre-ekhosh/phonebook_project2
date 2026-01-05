@@ -1,11 +1,10 @@
 # database.py - PhoneBook Database
-import sqlite3
+import sqlite3https://github.com/zohre-ekhosh/phonebook_project/edit/main/database.py
 import csv
 import os
 
 class PhoneBookDB:
     def __init__(self, db_name="phonebook.db"):
-        # ساخت مسیر کامل برای دیتابیس در فولدر پروژه
         project_dir = os.path.dirname(os.path.abspath(__file__))
         self.db_name = os.path.join(project_dir, db_name)
         self._init_db()
@@ -168,7 +167,6 @@ def show_all(db, title):
 def test_all():
     print("=== Testing all DB functions ===")
     
-    # ساخت مسیر کامل برای تست دیتابیس در فولدر پروژه
     project_dir = os.path.dirname(os.path.abspath(__file__))
     test_db_path = os.path.join(project_dir, "test.db")
     
@@ -176,7 +174,7 @@ def test_all():
     if os.path.exists(test_db_path):
         os.remove(test_db_path)
     
-    db = PhoneBookDB("test.db")  # این هم اکنون در فولدر پروژه ساخته می‌شود
+    db = PhoneBookDB("test.db")  
     
     # 1. Start with empty DB
     show_all(db, "1. EMPTY DATABASE (START)")
@@ -254,4 +252,5 @@ def test_all():
 
 # Run test
 if __name__ == "__main__":
+
     test_all()
